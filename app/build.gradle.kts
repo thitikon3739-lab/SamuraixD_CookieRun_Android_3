@@ -1,8 +1,12 @@
-plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
 
 android {
     namespace = "com.samuraixd.cookierun"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "com.samuraixd.cookierun"
         minSdk = 34
@@ -10,8 +14,19 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures { viewBinding = false }
-    kotlinOptions { jvmTarget = "17" }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildFeatures {
+        viewBinding = false
+    }
 }
 
 dependencies {
